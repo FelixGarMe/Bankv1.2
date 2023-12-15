@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  felix-app:
+    image: felix-image:tag  # Reemplaza 'felix-image' y 'tag' con la imagen y etiqueta reales
+    ports:
+      - "8000:19006"
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://nombre-del-api:puerto  # Configura la URL del API externo
+    networks:
+      - my_network  # Reemplaza 'my_network' con el nombre de tu red
+
+networks:
+  my_network:
+    driver: bridge
